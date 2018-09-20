@@ -1,0 +1,30 @@
+<div style="text-align:center" class="new">
+
+    <a [routerLink]="['/']"><button class="btn btn-primary btn1">HOME</button></a>
+
+    <h3> Add a new author: </h3>
+
+      <form  (submit)="onSubmit()">
+
+        <p class="error" *ngIf="messages.name"> {{messages.name}}</p>
+
+        <div class="form-group row">
+          <div class="col-md-6 col-md-offset-3">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name" [(ngModel)]="newAuthor.name">
+          </div>
+        </div>
+
+        <p class="error" *ngIf="messages.quote"> {{messages.quote}}</p>
+
+        <div class="form-group row">
+          <div class="col-md-6 col-md-offset-3">
+            <label for="quote">Quote</label>
+            <input type="text" class="form-control" id="quote" name="quote" [(ngModel)]="newAuthor.quote">
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary mb-2">Submit</button>
+        <a [routerLink]="['/']" class="btn btn-primary mb-2">Cancel </a>
+      </form>
+</div>

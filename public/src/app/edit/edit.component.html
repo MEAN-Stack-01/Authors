@@ -1,0 +1,28 @@
+
+<div style="text-align:center" class="edit">
+  <a [routerLink]="['/']"><button class="btn btn-primary btn1">HOME</button></a>
+
+  <h3> Edit this author: </h3>
+
+  <form (submit)="onSubmit()">
+
+    <div class="form-group row">
+      <div class="col-md-6 col-md-offset-3">
+        <p class="error" *ngIf="errors.name"> {{errors.name}}</p>
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" name="name" [(ngModel)]="editAuthor.name">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <div class="col-md-6 col-md-offset-3">
+        <p class="error" *ngIf="errors.quote"> {{errors.quote}}</p>
+        <label for="quote">Quote</label>
+        <input type="text" class="form-control" id="quote" name="quote" [(ngModel)]="editAuthor.quote">
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary mb-2">Submit</button>
+    <a [routerLink]="['/']" class="btn btn-primary mb-2">Cancel </a>
+  </form>
+</div>
